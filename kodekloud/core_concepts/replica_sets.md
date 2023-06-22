@@ -80,3 +80,8 @@
     `kubectl edit replicaset new-replica-set` 
     or
     `kubectl scale rs new-replica-set --replicas=5`
+
+15. Now scale the ReplicaSet down to 2 PODs.
+    `kubectl edit replicaset new-replica-set`
+    or
+    `kubectl scale rs new-replica-set --replicas=2`
