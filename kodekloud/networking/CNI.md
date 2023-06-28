@@ -3,7 +3,7 @@
     Run the command: `ps -aux | grep kubelet | grep --color container-runtime-endpoint` and look at the configured --container-runtime-endpoint flag.
     ```
     controlplane ~ ➜  ps -aux | grep kubelet | grep --color container-runtime-endpoint
-root        4562  0.0  0.0 3700492 102052 ?      Ssl  12:36   0:08 /usr/bin/kubelet --bootstrap-kubeconfig=/etc/kubernetes/bootstrap-kubelet.conf --kubeconfig=/etc/kubernetes/kubelet.conf --config=/var/lib/kubelet/config.yaml --container-runtime-endpoint=unix:///var/run/containerd/containerd.sock --pod-infra-container-image=registry.k8s.io/pause:3.9
+    root        4562  0.0  0.0 3700492 102052 ?      Ssl  12:36   0:08 /usr/bin/kubelet --bootstrap-kubeconfig=/etc/kubernetes/bootstrap-kubelet.conf --kubeconfig=/etc/kubernetes/kubelet.conf --config=/var/lib/kubelet/config.yaml --container-runtime-endpoint=unix:///var/run/containerd/containerd.sock --pod-infra-container-image=registry.k8s.io/pause:3.9
     ```
 
 
@@ -45,19 +45,3 @@ root        4562  0.0  0.0 3700492 102052 ?      Ssl  12:36   0:08 /usr/bin/kube
     ]
     }
     ```
-
-
-6.
-    
-
-7.
-    
-
-8.
-    
-
-9.
-    
-
-10.
-

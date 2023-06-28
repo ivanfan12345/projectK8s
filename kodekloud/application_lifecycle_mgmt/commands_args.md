@@ -42,7 +42,7 @@
 
 5. Update pod ubuntu-sleeper-3 to sleep for 2000 seconds.
 
-6. Inspect the file Dockerfile given at /root/webapp-color directory. What command is run at container startup?
+6. Inspect the file Dockerfile given at `/root/webapp-color directory`. What command is run at container startup?
 
     `Inspect the ENTRYPOINT in the Dockerfile.`
 

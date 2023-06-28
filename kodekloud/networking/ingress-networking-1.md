@@ -48,7 +48,7 @@
     Type    Reason  Age                    From                      Message
     ----    ------  ----                   ----                      -------
     Normal  Sync    5m53s (x2 over 5m54s)  nginx-ingress-controller  Scheduled for sync
-  ```
+    ```
 
 9. What backend is the /wear path on the Ingress configured with?
 

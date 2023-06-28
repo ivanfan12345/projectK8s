@@ -65,15 +65,3 @@
 6. How does this Kubernetes cluster ensure that a kube-proxy pod runs on all nodes in the cluster? Inspect the kube-proxy pods and try to identify how they are deployed.
 
     `kubectl get ds -n kube-system`
-
-7.
-    
-
-8.
-    
-
-9.
-    
-
-10.
-    

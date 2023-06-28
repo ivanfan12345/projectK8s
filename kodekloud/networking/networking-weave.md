@@ -39,12 +39,3 @@
     172.25.0.0/24 dev eth1 proto kernel scope link src 172.25.0.12 
     192.21.167.0/24 dev eth0 proto kernel scope link src 192.21.167.9 
     ```
-
-8.
-    
-
-9.
-    
-
-10.
-    
