@@ -149,3 +149,61 @@
 
     Write the reason of the issue into /opt/course/18/reason.txt
 
+19. Create Secret and mount into Pod
+
+    Do the following in a new NAmespace `secret. Create a pod named secret-pod of image busybox:1.31.1 which should keep running for some time.
+
+    There is an existing Secret located at /opt/course/19/secret.yaml , create it in the namespace secret and mout if readonly into the pod at /tmp/secret1.
+
+    Createw a new secret in namespace secret called secret2 which should contain `user=user1` and pass=1234. These entries should be availble inside the pod's container as environment variables APP_USER and APP_PASS.
+
+20. Update Kubernetes Version and join cluster.
+
+    Your coworker said node cluster3-node2 is running an older kubernetes version and is not even part of the cluster. Update kubernetes on that node to the exact version that's running on cluster3-controlplane1. Then add this node to the cluster. Use kubeadm for this.
+
+21. Create a static pod and service
+
+    Create a Static Pod named `my-static-pod` in namespace default on cluster3-controlplane1. It should be of image nginx:1.16-alpine and have resource requests for 10m CPU and 20Mi memory.
+
+    Then create a NodePort Service named `static-pod-service` which exposes that static Pod on port 80 and check if it has Endpoints and if it's reachable through the `cluster3-controplane1` internal IP address. You can connect to the internal node IPs from your main terminal.
+
+22. Check how long certificatesd are valid.
+
+    Check how long the kube-apiserver server certificate is valid on `cluster2-controlplane1`. Do this with openssl or cfssl. Write the expiration date into /opt/22/expiration. 
+
+    Also run the correct kubeadm command to list the expiration dates and confirm both methods show the same date.
+
+    Write the correct kubeadm command that would renew the apiserver server certificate into /opt/course/22/kubeadm-renew-certs.sh
+
+23. Kubelet client/server cert info
+
+    Node cluster2-node1 has been added to the cluster using kubeadm and TLS bootstrapping.
+
+    Find the "Issuer" and "Extended Key Useage" values of cluster2-node1:
+
+    1. kubelet client cert, the one used for outgoing connection to the kube-apiserver.
+    2. kubelet server cert, the one used for incoming connections from the kube-apiserver.
+
+    Write the information into file `/opt/course/23/certificate-info.txt`
+
+    Compare the "issuer" and "Extended Key Usage" fields of both certs and make sense of these.
+
+24. Network Policy
+
+    There was a security incident where an intruder was able to access the whole cluster from a single hacked backend pod.
+
+    To prevent this create a NetworkPolicy called np-backend in namespace project-snake. It should allow the bakcned-* pods only to:
+
+        - connect to db1-* pods on port 1111
+        - connect to db2-* pods on port 2222
+    
+    USe the app label of pods in your policy. After implementation, connections from backend-* pods to vault-* pords on port 3333 should for example no longer work.
+
+25. Etcd Snapshot Save and Restore
+
+    Make a backup of etcd running on cluster3-controplane1 and save it on the controlplane node at `/tmp/etcd-backup.db`. 
+    
+    Then create a pod of your kind in the cluster.
+    
+    Finally restore the backup, confirm the cluster is still working and that the created pod is no longer with us. RIP
+

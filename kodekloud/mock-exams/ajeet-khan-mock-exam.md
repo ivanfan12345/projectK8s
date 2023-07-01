@@ -1,6 +1,5 @@
 1. Create a new pod called web-pod with image busybox Allow the pod to be able to set system_time​. The container should sleep for 3200 seconds​
 
-
 2. Create a new deployment called myproject, with image nginx:1.16 and ​1 replica. Next upgrade the deployment to version 1.17 using rolling​ update​. Make sure that the version upgrade is recorded in the resource annotation.​
 
 3. Create a new deployment called my-deployment. Scale the deployment to 3 replicas.             ​
