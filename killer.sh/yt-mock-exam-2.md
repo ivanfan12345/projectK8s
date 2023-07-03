@@ -6,7 +6,7 @@
 
     Next write a command to display current context into `/opt/course/1/context_default_kubectl.sh` the command should use kubectl.
 
-    Finally write a second command doing the same thing into `/opt/course/1/context_default_no_kubectl.sh , but without the use of kubectl.
+    Finally write a second command doing the same thing into `/opt/course/1/context_default_no_kubectl.sh` , but without the use of kubectl.
 
 
 2. Schedule Pod on Controlplane Node
@@ -19,7 +19,7 @@
 
 4. Pod Ready if Service is reachable
 
-    Do the following in Namespace `default`. Create a single Pod named `ready-if-service-ready` of image `nginx:1.16.1-alpine`. Configure a LivenessProbe which simply executes command `true`. Also configure a ReadinessProbe which does check if the url `http://service-ami-ready:80` is reachable, you can use `wget -T2 -O- http://service-am-i-ready:80 for this. Start the Pod and confirm it isn't ready because of the ReadinessProble.
+    Do the following in Namespace `default`. Create a single Pod named `ready-if-service-ready` of image `nginx:1.16.1-alpine`. Configure a LivenessProbe which simply executes command `true`. Also configure a ReadinessProbe which does check if the url `http://service-ami-ready:80` is reachable, you can use `wget -T2 -O- http://service-am-i-ready:80` for this. Start the Pod and confirm it isn't ready because of the ReadinessProble.
 
     Create a second pod named `am-i-ready` of image `nginx:1.16.1-alpine` with label `id: cross-server-read`. The already existing Service `service-am-i-read` should now have that second Pod as endpoint.
 
@@ -207,3 +207,5 @@
     
     Finally restore the backup, confirm the cluster is still working and that the created pod is no longer with us. RIP
 
+
+1
