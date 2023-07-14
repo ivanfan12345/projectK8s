@@ -57,6 +57,28 @@ Next, create a pod called pvviewer with the image: redis and serviceAccount: pvv
     Container 1 Environment Value Set
     Container 2 Environment Value Set
 
+    `k run curl --image=alpine/curl --rm -it  -- sh`
+    network-policy.yaml:
+    ```
+    apiVersion: networking.k8s.io/v1
+    kind: NetworkPolicy
+    metadata:
+    name: ingress-to-nptest
+    namespace: default
+    spec:
+    podSelector:
+        matchLabels:
+        run: np-test-1
+    policyTypes:
+        - Ingress
+    ingress:
+        -
+        ports:
+            - protocol: TCP
+            port: 80
+    ```
+
+
 4. Create a Pod called non-root-pod , image: redis:alpine
 
     runAsUser: 1000

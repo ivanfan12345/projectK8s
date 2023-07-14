@@ -13,7 +13,7 @@
 
     Create a single pod of image `httpd:2.4.41-alpine` in the Namespace `default`. The Pod should be named pod1 and the container should be named pod1-container. This pod should only be scheduled on a controlplane node, do not add new labels any nodes. 
 
-3. Scale down StatefulSet
+3. Scale down StatefulSet 
 
     There are two pods named `o3db-*` in Namespace `porject-c13`. C13 management asked you to scale the Pods down to one replica to save resources.
 
